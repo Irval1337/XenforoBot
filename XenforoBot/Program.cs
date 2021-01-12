@@ -74,7 +74,7 @@ namespace XenforoBot
                             request.UserAgent = Http.ChromeUserAgent();
                             request.Cookies = new CookieDictionary();
                             request.AddHeader("XF-Api-Key", settings.xfToken);
-                            var response = request.Post("https://datastock.biz/api/auth", "login=" + data[0] + "&password=" + data[1], "application/x-www-form-urlencoded").ToString();
+                            var response = request.Post(settings.xfUri + "/api/auth", "login=" + data[0] + "&password=" + data[1], "application/x-www-form-urlencoded").ToString();
                             XenforoJSON response_data = JsonConvert.DeserializeObject<XenforoJSON>(response);
 
                             if (response.Contains("success") && response_data != null && response_data.success != null && response_data.User != null)

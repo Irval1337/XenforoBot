@@ -15,6 +15,7 @@ namespace XenforoBot
     public class SettingsJSON
     {
         public string dsToken { get; set; }
+        public string xfUri { get; set; }
         public string xfToken { get; set; }
         public int[] groupsHierarchy { get; set; }
         public Group[] groups { get; set; }
